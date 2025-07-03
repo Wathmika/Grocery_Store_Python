@@ -17,9 +17,8 @@ def get_all_products(connection):
 
 def insert_new_product(connection, product):
     cursor = connection.cursor()
-    query = ("INSERT INTO products "
-             "(name, uom_id, price_per_unit)"
-             "VALUES (%s, %s, %s)")
+    query = ("INSERT INTO products (product_name, uom_id, price_per_unit) "
+        "VALUES (%s, %s, %s)")
     data = (product['product_name'], product['uom_id'], product['price_per_unit'])
 
     cursor.execute(query, data)
