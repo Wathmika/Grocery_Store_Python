@@ -5,7 +5,7 @@ def insert_order(connection, order):
     cursor = connection.cursor()
 
     order_query = ("INSERT INTO orders "
-             "(customer_name, total, datetime)"
+             "(customer_name, total, date_time)"
              "VALUES (%s, %s, %s)")
     order_data = (order['customer_name'], order['grand_total'], datetime.now())
 
